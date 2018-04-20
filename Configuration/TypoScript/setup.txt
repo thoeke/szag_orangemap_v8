@@ -1,0 +1,107 @@
+
+page.includeCSS {
+        leaflet = EXT:szag_orangemap/Resources/Public/css/leaflet.css
+        orangemap = EXT:szag_orangemap/Resources/Public/css/orangemap.css
+}
+
+page.includeJSFooterlibs {
+        js1 = EXT:szag_orangemap/Resources/Public/js/leaflet.js
+        js2 = EXT:szag_orangemap/Resources/Public/js/L.Control.Zoomslider.js
+        js3 = EXT:szag_orangemap/Resources/Public/js/leaflet.markercluster.js
+        js4 = EXT:szag_orangemap/Resources/Public/js/orangemap.js
+        js5 = EXT:szag_orangemap/Resources/Public/js/chosen.jquery.js
+}
+
+lib.gpvar = COA
+lib.gpvar {
+  # Schuetzt vor XSS, daher auch ein COA!
+  stdWrap.htmlSpecialChars = 1
+  10 = TEXT
+  10 {
+    dataWrap = GP:{current}
+    insertData = 1
+    wrap3 = {|}
+  }
+}
+
+plugin.tx_szagorangemap_szagorangemap {
+	view {
+		templateRootPaths.0 = {$plugin.tx_szagorangemap_szagorangemap.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_szagorangemap_szagorangemap.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_szagorangemap_szagorangemap.view.layoutRootPath}
+	}
+	persistence {
+		
+	}
+        settings {
+            ajaxPageType = 800
+         }
+}
+
+plugin.tx_szagorangemap._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-szag-orangemap table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-szag-orangemap table th {
+		font-weight:bold;
+	}
+
+	.tx-szag-orangemap table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+
+// Dynamische Marker-Ausgabe auf der Map
+
+tx_szagorangemap_list = PAGE
+tx_szagorangemap_list {
+  typeNum = 800
+  config {
+    disableAllHeaderCode = 1
+    xhtml_cleaning = 0
+    admPanel = 0
+    #additionalHeaders = Content-type: text/plain
+    no_cache = 1
+    locale_all = de_DE.utf8
+  }
+
+  10 = USER_INT
+  10 {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    vendorName = PierraaDesign
+    extensionName = SzagOrangemap
+    pluginName = Szagorangemap
+    controller = Markers
+    switchableControllerActions {
+      Markers {
+        1 = list
+      }
+    }
+    list < plugin.tx_szagorangemap.list
+    persistence < plugin.tx_szagorangemap.persistence
+    persistence.storagePid = 10
+    settings < plugin.tx_szagorangemap.settings
+  }
+}

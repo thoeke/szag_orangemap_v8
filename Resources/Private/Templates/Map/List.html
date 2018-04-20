@@ -1,0 +1,45 @@
+<html xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="defaultLayout" />
+
+<f:section name="content">
+ 
+<!-- ###ORANGEMAP### -->
+    
+<div class="ext_orangemap">
+    
+<div id="orangemap" class="sz-ce_inline leaflet-container leaflet-fade-anim" style="position: relative;" tabindex="0"></div>
+
+<f:form method="post">
+    
+    <fieldset>
+        <div class="row sz-ce_inline">
+            <div class="col-xs-12 col-md-6">
+                <label>{labelnation}</label>
+                <f:form.select class="sz-chosen" multiple="true" size="5" id="snations" name="snations" options="{nation}" value="{werte.snations}" additionalAttributes="{onchange:'updateOM()'}" optionLabelField="title" optionValueField="uid" />
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <label>{labelcity}</label>
+                <f:form.select class="sz-chosen" multiple="true" size="5" id="scities" name="scities" options="{city}" value="{werte.scities}" additionalAttributes="{onchange:'updateOM()'}" optionLabelField="title" optionValueField="uid" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <label>{labelbusiness}</label>
+                <f:form.select class="sz-chosen" multiple="true" size="5" id="sbusinessunits" name="sbusinessunits" options="{bunit}" value="{werte.sbusinessunits}" additionalAttributes="{onchange:'updateOM()'}" optionLabelField="title" optionValueField="uid" />
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <label>{labelcompany}</label>
+                <f:form.select class="sz-chosen" multiple="true" size="5" id="scompanies" name="scompanies" options="{company}" value="{werte.scompanies}" additionalAttributes="{onchange:'updateOM()'}" optionLabelField="title" optionValueField="uid" />
+            </div>
+        </div>
+    </fieldset>
+    
+ </f:form>
+
+<a class="sz-map_syslink" id="sz-map_ajaxlink">{f:uri.page(pageType:settings.ajaxPageType)}</a>
+
+</div>
+
+</f:section>
+
+</html>

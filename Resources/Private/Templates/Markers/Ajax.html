@@ -1,0 +1,7 @@
+<f:layout name="Blank" />
+
+<f:section name="main">
+
+<f:for each="{marker}" as="row">L.marker([{row.latitude}, {row.longitude}], {icon: szagmarker}).addTo(mymap);</f:for>
+
+</f:section>

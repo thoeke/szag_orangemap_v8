@@ -1,0 +1,107 @@
+
+
+.tx-szagorangemap-pi1 {
+  max-width: 930px;
+}
+
+.tx-szagorangemap-pi1 #orangemap {
+  height: 460px;
+}
+
+.tx-szagorangemap-pi1 label {
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+.tx-szagorangemap-pi1 .om-filter {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.tx-szagorangemap-pi1 .om-filter .row-4-2-subset .col {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  float: left;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.tx-szagorangemap-pi1 .om-filter .row-4-2-subset .col-2 {
+  width: 350px;
+}
+
+.tx-szagorangemap-pi1 .om-filter .row-4-2-subset .col-2 select {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.tx-szagorangemap-pi1 .om-filter .row-4-2-subset::after {
+  content: ".";
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0px;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 0px;
+}
+
+.marker-cluster-small, .marker-cluster-large, .marker-cluster-medium {
+  background-color: rgba(255, 102, 0, 0.6);
+}
+
+.marker-cluster-small div, .marker-cluster-large div, .marker-cluster-medium div {
+  background-color: rgba(255, 102, 0, 0.6);
+}
+
+.marker-cluster div {
+  font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, Tahoma, sans-serif;
+}
+
+.leaflet-control-zoomslider-body {
+  background: #dadada;
+}
+
+.leaflet-control-zoomslider-in:after {
+  color: #909090;
+}
+
+.leaflet-control-zoomslider-out:after {
+  color: #909090;
+}
+
+.leaflet-bar a, .leaflet-bar a:hover {
+  color: #909090;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  box-shadow: none;
+}
+
+.leaflet-popup-content {
+  margin: 13px 13px;
+  line-height: 1.4;
+}
+
+.om-markertitle {
+  font-weight: bold;
+}
+
+.leaflet-touch .leaflet-control-zoomslider {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-control-zoom {
+  display: none !important;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+    background-color: #ef7d00;
+    background-image: none;
+    line-height: 1.05rem;
+    box-shadow: none;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+}

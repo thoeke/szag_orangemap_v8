@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2017-01-10T14:42:07Z" product-name="szag_orangemap">
+		<header/>
+		<body>
+			<trans-unit id="tx_szagorangemap_domain_model_businessunit">
+				<source>Businessunit</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_businessunit.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_cities">
+				<source>Cities</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_cities.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_companies">
+				<source>Companies</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_companies.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_markers">
+				<source>Markers</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_markers.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_markers.adress">
+				<source>Adress</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_markers.zipcode">
+				<source>Zipcode</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_markers.website">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_markers.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_markers.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_markers.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_markers.company">
+				<source>Company</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_markers.nation">
+				<source>Nation</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_markers.businessunit">
+				<source>Businessunit</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_nations">
+				<source>Nations</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_nations.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_standort">
+				<source>Standort</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_standort.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_standort.locationdesc">
+				<source>Locationdesc</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_standort.business">
+				<source>Business</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_standort.lat">
+				<source>Lat</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_standort.lng">
+				<source>Lng</source>
+			</trans-unit>
+			<trans-unit id="tx_szagorangemap_domain_model_standort.country">
+				<source>Country</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

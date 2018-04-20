@@ -1,0 +1,15 @@
+
+plugin.tx_szagorangemap_szagorangemap {
+	view {
+		# cat=plugin.tx_szagorangemap_szagorangemap/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:szag_orangemap/Resources/Private/Templates/
+		# cat=plugin.tx_szagorangemap_szagorangemap/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:szag_orangemap/Resources/Private/Partials/
+		# cat=plugin.tx_szagorangemap_szagorangemap/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:szag_orangemap/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_szagorangemap_szagorangemap//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

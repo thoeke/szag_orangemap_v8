@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2017-01-10T14:42:07Z" product-name="szag_orangemap">
+		<header/>
+		<body>
+			<trans-unit id="location.description">
+				<source>location</source>
+			</trans-unit>
+			<trans-unit id="locationdesc.description">
+				<source>locationdesc</source>
+			</trans-unit>
+			<trans-unit id="business.description">
+				<source>business</source>
+			</trans-unit>
+			<trans-unit id="lat.description">
+				<source>lat</source>
+			</trans-unit>
+			<trans-unit id="lng.description">
+				<source>lng</source>
+			</trans-unit>
+			<trans-unit id="country.description">
+				<source>country</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
