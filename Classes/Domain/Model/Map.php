@@ -1,5 +1,5 @@
 <?php
-namespace PierraaDesign\SzagOrangemap\Domain\Model;
+namespace PierraaGroup\SzagOrangemap\Domain\Model;
 
 
 class Start extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity

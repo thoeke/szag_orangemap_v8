@@ -1,11 +1,11 @@
 <?php
-namespace PierraaDesign\SzagOrangemap\Domain\Model;
+namespace PierraaGroup\SzagOrangemap\Domain\Model;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2017 PierraaDesign Werbeagentur GmbH <info@pierraa-design.de>, PierraaDesign Werbeagentur GmbH
+ *  (c) 2017 PierraaGroup Werbeagentur GmbH <info@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
  *
  *  All rights reserved
  *

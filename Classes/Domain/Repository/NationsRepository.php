@@ -1,11 +1,11 @@
 <?php
-namespace PierraaDesign\SzagOrangemap\Domain\Repository;
+namespace PierraaGroup\SzagOrangemap\Domain\Repository;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2016 Markus Klinger <klinger@pierraa-design.de>, PierraaDesign Werbeagentur GmbH
+ *  (c) 2016 Markus Klinger <klinger@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
  *
  *  All rights reserved
  *
@@ -31,8 +31,10 @@ namespace PierraaDesign\SzagOrangemap\Domain\Repository;
  */
 class NationsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-    protected $defaultOrderings = array(
-        'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
-    );
+    public function findSorted() {
+        $query = $this->createQuery();
+        $query->setOrderings(array("title" => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
+        $query = $query->execute();
+    }
 
 }

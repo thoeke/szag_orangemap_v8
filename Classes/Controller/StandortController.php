@@ -1,11 +1,11 @@
 <?php
-namespace PierraaDesign\SzagOrangemap\Controller;
+namespace PierraaGroup\SzagOrangemap\Controller;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2017 PierraaDesign Werbeagentur GmbH <info@pierraa-design.de>, PierraaDesign Werbeagentur GmbH
+ *  (c) 2017 PierraaGroup Werbeagentur GmbH <info@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
  *
  *  All rights reserved
  *
@@ -35,7 +35,7 @@ class StandortController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     /**
      * standortRepository
      *
-     * @var \PierraaDesign\SzagOrangemap\Domain\Repository\StandortRepository
+     * @var \PierraaGroup\SzagOrangemap\Domain\Repository\StandortRepository
      * @inject
      */
     protected $standortRepository = NULL;

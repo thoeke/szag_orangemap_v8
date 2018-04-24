@@ -1,11 +1,11 @@
 <?php
-namespace PierraaDesign\SzagOrangemap\Domain\Model;
+namespace PierraaGroup\SzagOrangemap\Domain\Model;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2017 PierraaDesign Werbeagentur GmbH <info@pierraa-design.de>, PierraaDesign Werbeagentur GmbH
+ *  (c) 2017 PierraaGroup Werbeagentur GmbH <info@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
  *
  *  All rights reserved
  *
@@ -77,28 +77,28 @@ class Markers extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * city
      *
-     * @var \PierraaDesign\SzagOrangemap\Domain\Model\Cities
+     * @var \PierraaGroup\SzagOrangemap\Domain\Model\Cities
      */
     protected $city = null;
     
     /**
      * company
      *
-     * @var \PierraaDesign\SzagOrangemap\Domain\Model\Companies
+     * @var \PierraaGroup\SzagOrangemap\Domain\Model\Companies
      */
     protected $company = null;
     
     /**
      * nation
      *
-     * @var \PierraaDesign\SzagOrangemap\Domain\Model\Nations
+     * @var \PierraaGroup\SzagOrangemap\Domain\Model\Nations
      */
     protected $nation = null;
     
     /**
      * businessunit
      *
-     * @var \PierraaDesign\SzagOrangemap\Domain\Model\Businessunit
+     * @var \PierraaGroup\SzagOrangemap\Domain\Model\Businessunit
      */
     protected $businessunit = null;
     
@@ -231,7 +231,7 @@ class Markers extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the city
      *
-     * @return \PierraaDesign\SzagOrangemap\Domain\Model\Cities city
+     * @return \PierraaGroup\SzagOrangemap\Domain\Model\Cities city
      */
     public function getCity()
     {
@@ -241,10 +241,10 @@ class Markers extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the city
      *
-     * @param \PierraaDesign\SzagOrangemap\Domain\Model\Cities $city
+     * @param \PierraaGroup\SzagOrangemap\Domain\Model\Cities $city
      * @return void
      */
-    public function setCity(\PierraaDesign\SzagOrangemap\Domain\Model\Cities $city)
+    public function setCity(\PierraaGroup\SzagOrangemap\Domain\Model\Cities $city)
     {
         $this->city = $city;
     }
@@ -252,7 +252,7 @@ class Markers extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the company
      *
-     * @return \PierraaDesign\SzagOrangemap\Domain\Model\Companies company
+     * @return \PierraaGroup\SzagOrangemap\Domain\Model\Companies company
      */
     public function getCompany()
     {
@@ -262,10 +262,10 @@ class Markers extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the company
      *
-     * @param \PierraaDesign\SzagOrangemap\Domain\Model\Companies $company
+     * @param \PierraaGroup\SzagOrangemap\Domain\Model\Companies $company
      * @return void
      */
-    public function setCompany(\PierraaDesign\SzagOrangemap\Domain\Model\Companies $company)
+    public function setCompany(\PierraaGroup\SzagOrangemap\Domain\Model\Companies $company)
     {
         $this->company = $company;
     }
@@ -273,7 +273,7 @@ class Markers extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the nation
      *
-     * @return \PierraaDesign\SzagOrangemap\Domain\Model\Nations nation
+     * @return \PierraaGroup\SzagOrangemap\Domain\Model\Nations nation
      */
     public function getNation()
     {
@@ -283,10 +283,10 @@ class Markers extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the nation
      *
-     * @param \PierraaDesign\SzagOrangemap\Domain\Model\Nations $nation
+     * @param \PierraaGroup\SzagOrangemap\Domain\Model\Nations $nation
      * @return void
      */
-    public function setNation(\PierraaDesign\SzagOrangemap\Domain\Model\Nations $nation)
+    public function setNation(\PierraaGroup\SzagOrangemap\Domain\Model\Nations $nation)
     {
         $this->nation = $nation;
     }
@@ -294,7 +294,7 @@ class Markers extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the businessunit
      *
-     * @return \PierraaDesign\SzagOrangemap\Domain\Model\Businessunit businessunit
+     * @return \PierraaGroup\SzagOrangemap\Domain\Model\Businessunit businessunit
      */
     public function getBusinessunit()
     {
@@ -304,10 +304,10 @@ class Markers extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the businessunit
      *
-     * @param \PierraaDesign\SzagOrangemap\Domain\Model\Businessunit $businessunit
+     * @param \PierraaGroup\SzagOrangemap\Domain\Model\Businessunit $businessunit
      * @return void
      */
-    public function setBusinessunit(\PierraaDesign\SzagOrangemap\Domain\Model\Businessunit $businessunit)
+    public function setBusinessunit(\PierraaGroup\SzagOrangemap\Domain\Model\Businessunit $businessunit)
     {
         $this->businessunit = $businessunit;
     }

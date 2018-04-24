@@ -1,11 +1,11 @@
 <?php
-namespace PierraaDesign\SzagCareer\Domain\Repository;
+namespace PierraaGroup\SzagCareer\Domain\Repository;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2016 Markus Klinger <klinger@pierraa-design.de>, PierraaDesign Werbeagentur GmbH
+ *  (c) 2016 Markus Klinger <klinger@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
  *
  *  All rights reserved
  *

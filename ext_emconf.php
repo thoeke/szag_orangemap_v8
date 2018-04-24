@@ -11,11 +11,11 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'Orangemap',
+	'title' => 'SZAG Orangemap',
 	'description' => 'Map with filter options via dropdowns & ajax refresh',
 	'category' => 'plugin',
 	'author' => 'Thorsten Hoeke',
-	'author_email' => 'info@pierraa-design.de',
+	'author_email' => 'hoeke@pierraa-group.de',
 	'state' => 'alpha',
 	'internal' => '',
 	'uploadfolder' => '0',

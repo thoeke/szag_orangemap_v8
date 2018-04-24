@@ -1,11 +1,11 @@
 <?php
-namespace PierraaDesign\SzagOrangemap\Controller;
+namespace PierraaGroup\SzagOrangemap\Controller;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2017 PierraaDesign Werbeagentur GmbH <info@pierraa-design.de>, PierraaDesign Werbeagentur GmbH
+ *  (c) 2017 PierraaGroup Werbeagentur GmbH <info@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
  *
  *  All rights reserved
  *
@@ -35,7 +35,7 @@ class CitiesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     /**
      * citiesRepository
      *
-     * @var \PierraaDesign\SzagOrangemap\Domain\Repository\CitiesRepository
+     * @var \PierraaGroup\SzagOrangemap\Domain\Repository\CitiesRepository
      * @inject
      */
     protected $citiesRepository = NULL;

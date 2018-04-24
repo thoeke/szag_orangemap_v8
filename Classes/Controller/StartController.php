@@ -1,11 +1,11 @@
 <?php
-namespace PierraaDesign\SzagOrangemap\Controller;
+namespace PierraaGroup\SzagOrangemap\Controller;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2017 PierraaDesign Werbeagentur GmbH <info@pierraa-design.de>, PierraaDesign Werbeagentur GmbH
+ *  (c) 2017 PierraaGroup Werbeagentur GmbH <info@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
  *
  *  All rights reserved
  *
@@ -32,7 +32,7 @@ class StartController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
 	 * nationsRepository
 	 *
-	 * @var \PierraaDesign\SzagOrangemap\Domain\Repository\NationsRepository
+	 * @var \PierraaGroup\SzagOrangemap\Domain\Repository\NationsRepository
 	 * @inject
 	 */    
     protected $nationsRepository = NULL;
@@ -58,6 +58,7 @@ class StartController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	{
         //$nations = $this->nationsRepository->findAll();
         $this->view->assign('nations',$nations);
+        $this->view->assign('phnation', 'Wählen Sie ein Land');
         
 		if ($GLOBALS['TSFE']->sys_language_uid == 2 ) {
             $this->view->assign('labelcountry', 'Country');

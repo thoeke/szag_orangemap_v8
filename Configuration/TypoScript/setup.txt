@@ -9,7 +9,7 @@ page.includeJSFooterlibs {
         js2 = EXT:szag_orangemap/Resources/Public/js/L.Control.Zoomslider.js
         js3 = EXT:szag_orangemap/Resources/Public/js/leaflet.markercluster.js
         js4 = EXT:szag_orangemap/Resources/Public/js/orangemap.js
-        js5 = EXT:szag_orangemap/Resources/Public/js/chosen.jquery.js
+      #  js5 = EXT:szag_orangemap/Resources/Public/js/chosen.jquery.js
 }
 
 lib.gpvar = COA
@@ -90,7 +90,7 @@ tx_szagorangemap_list {
   10 = USER_INT
   10 {
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
-    vendorName = PierraaDesign
+    vendorName = PierraaGroup
     extensionName = SzagOrangemap
     pluginName = Szagorangemap
     controller = Markers

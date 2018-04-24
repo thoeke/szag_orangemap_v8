@@ -1,11 +1,11 @@
 <?php
-namespace PierraaDesign\SzagOrangemap\Domain\Repository;
+namespace PierraaGroup\SzagOrangemap\Domain\Repository;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2017 Thorsten Hoeke <info@pierraa-design.de>, PierraaDesign Werbeagentur GmbH
+ *  (c) 2017 Thorsten Hoeke <info@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
  *
  *  All rights reserved
  *

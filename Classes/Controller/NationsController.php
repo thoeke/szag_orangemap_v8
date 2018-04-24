@@ -1,11 +1,11 @@
 <?php
-namespace PierraaDesign\SzagOrangemap\Controller;
+namespace PierraaGroup\SzagOrangemap\Controller;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2017 PierraaDesign Werbeagentur GmbH <info@pierraa-design.de>, PierraaDesign Werbeagentur GmbH
+ *  (c) 2017 PierraaGroup Werbeagentur GmbH <info@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
  *
  *  All rights reserved
  *
@@ -35,7 +35,7 @@ class NationsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     /**
      * nationsRepository
      *
-     * @var \PierraaDesign\SzagOrangemap\Domain\Repository\NationsRepository
+     * @var \PierraaGroup\SzagOrangemap\Domain\Repository\NationsRepository
      * @inject
      */
     protected $nationsRepository = NULL;
@@ -62,65 +62,5 @@ class NationsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $this->view->assign('nations', $nations);
     }
     
-    /**
-     * action new
-     *
-     * @return void
-     */
-    public function newAction()
-    {
-        
-    }
-    
-    /**
-     * action create
-     *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Nations $newNations
-     * @return void
-     */
-    public function createAction(\Pierraa\SzagOrangemap\Domain\Model\Nations $newNations)
-    {
-        $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        $this->nationsRepository->add($newNations);
-        $this->redirect('list');
-    }
-    
-    /**
-     * action edit
-     *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Nations $nations
-     * @ignorevalidation $nations
-     * @return void
-     */
-    public function editAction(\Pierraa\SzagOrangemap\Domain\Model\Nations $nations)
-    {
-        $this->view->assign('nations', $nations);
-    }
-    
-    /**
-     * action update
-     *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Nations $nations
-     * @return void
-     */
-    public function updateAction(\Pierraa\SzagOrangemap\Domain\Model\Nations $nations)
-    {
-        $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        $this->nationsRepository->update($nations);
-        $this->redirect('list');
-    }
-    
-    /**
-     * action delete
-     *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Nations $nations
-     * @return void
-     */
-    public function deleteAction(\Pierraa\SzagOrangemap\Domain\Model\Nations $nations)
-    {
-        $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        $this->nationsRepository->remove($nations);
-        $this->redirect('list');
-    }
 
 }

@@ -1,11 +1,11 @@
 <?php
-namespace PierraaDesign\SzagOrangemap\Controller;
+namespace PierraaGroup\SzagOrangemap\Controller;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2017 PierraaDesign Werbeagentur GmbH <info@pierraa-design.de>, PierraaDesign Werbeagentur GmbH
+ *  (c) 2017 PierraaGroup GmbH <info@pierraa-design.de>, PierraaGroup GmbH
  *
  *  All rights reserved
  *
@@ -32,7 +32,7 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
 	 * nationsRepository
 	 *
-	 * @var \PierraaDesign\SzagOrangemap\Domain\Repository\NationsRepository
+	 * @var \PierraaGroup\SzagOrangemap\Domain\Repository\NationsRepository
 	 * @inject
 	 */    
     protected $nationsRepository = NULL;
@@ -40,7 +40,7 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
 	 * citiesRepository
 	 *
-	 * @var \PierraaDesign\SzagOrangemap\Domain\Repository\CitiesRepository
+	 * @var \PierraaGroup\SzagOrangemap\Domain\Repository\CitiesRepository
 	 * @inject
 	 */    
     protected $citiesRepository = NULL;
@@ -48,7 +48,7 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      /**
 	 * businessunitRepository
 	 *
-	 * @var \PierraaDesign\SzagOrangemap\Domain\Repository\BusinessunitRepository
+	 * @var \PierraaGroup\SzagOrangemap\Domain\Repository\BusinessunitRepository
 	 * @inject
 	 */    
     protected $businessunitRepository = NULL;
@@ -56,7 +56,7 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
 	 * companiesRepository
 	 *
-	 * @var \PierraaDesign\SzagOrangemap\Domain\Repository\CompaniesRepository
+	 * @var \PierraaGroup\SzagOrangemap\Domain\Repository\CompaniesRepository
 	 * @inject
 	 */    
     protected $companiesRepository = NULL;
@@ -64,7 +64,7 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
 	 * markersRepository
 	 *
-	 * @var \PierraaDesign\SzagOrangemap\Domain\Repository\MarkersRepository
+	 * @var \PierraaGroup\SzagOrangemap\Domain\Repository\MarkersRepository
 	 * @inject
 	 */    
     protected $markersRepository = NULL;
@@ -88,7 +88,7 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	public function listAction()
 	{
         
-            $sql1 = $this->nationsRepository->findAll();
+            $sql1 = $this->nationsRepository->findSorted();
             $this->view->assign('nation',$sql1);
 
             $sql2 = $this->citiesRepository->findAll();
@@ -99,8 +99,8 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
             $sql4 = $this->companiesRepository->findAll();
             $this->view->assign('company',$sql4);
-
             
+
             $filters = $this->request->getArguments();  
             $this->view->assign('werte',$filters);
 

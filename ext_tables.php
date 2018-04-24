@@ -4,7 +4,7 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'PierraaDesign.' . $_EXTKEY,
+	'PierraaGroup.' . $_EXTKEY,
 	'Szagorangemap',
 	'Orangemap'
 );

@@ -1,11 +1,11 @@
 <?php
-namespace PierraaDesign\SzagOrangemap\Controller;
+namespace PierraaGroup\SzagOrangemap\Controller;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2017 PierraaDesign Werbeagentur GmbH <info@pierraa-design.de>, PierraaDesign Werbeagentur GmbH
+ *  (c) 2017 PierraaGroup Werbeagentur GmbH <info@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
  *
  *  All rights reserved
  *
@@ -35,7 +35,7 @@ class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      /**
      * nationsRepository
      *
-     * @var \PierraaDesign\SzagOrangemap\Domain\Repository\NationsRepository
+     * @var \PierraaGroup\SzagOrangemap\Domain\Repository\NationsRepository
      * @inject
      */
     protected $nationsRepository = NULL;
@@ -43,7 +43,7 @@ class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     /**
      * citiesRepository
      *
-     * @var \PierraaDesign\SzagOrangemap\Domain\Repository\CitiesRepository
+     * @var \PierraaGroup\SzagOrangemap\Domain\Repository\CitiesRepository
      * @inject
      */
     protected $citiesRepository = NULL;
@@ -51,7 +51,7 @@ class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     /**
      * businessunitRepository
      *
-     * @var \PierraaDesign\SzagOrangemap\Domain\Repository\BusinessunitRepository
+     * @var \PierraaGroup\SzagOrangemap\Domain\Repository\BusinessunitRepository
      * @inject
      */
     protected $businessunitRepository = NULL;
@@ -59,7 +59,7 @@ class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     /**
      * companiesRepository
      *
-     * @var \PierraaDesign\SzagOrangemap\Domain\Repository\CompaniesRepository
+     * @var \PierraaGroup\SzagOrangemap\Domain\Repository\CompaniesRepository
      * @inject
      */
     protected $companiesRepository = NULL;
@@ -67,7 +67,7 @@ class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     /**
      * markersRepository
      *
-     * @var \PierraaDesign\SzagOrangemap\Domain\Repository\MarkersRepository
+     * @var \PierraaGroup\SzagOrangemap\Domain\Repository\MarkersRepository
      * @inject
      */
     protected $markersRepository = NULL;
@@ -80,9 +80,7 @@ class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     public function listAction()
     {
         $filters = $this->request->getArguments();  
-               
         $content = $this->markersRepository->findByFilter($filters);
-        
         
         foreach($content as $key => $marker) {
             
@@ -116,8 +114,6 @@ class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         );  
     }
     
-   
-
     
     /**
      * action show
@@ -130,65 +126,6 @@ class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $this->view->assign('markers', $markers);
     }
     
-    /**
-     * action new
-     *
-     * @return void
-     */
-    public function newAction()
-    {
-        
-    }
-    
-    /**
-     * action create
-     *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Markers $newMarkers
-     * @return void
-     */
-    public function createAction(\Pierraa\SzagOrangemap\Domain\Model\Markers $newMarkers)
-    {
-        $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        $this->markersRepository->add($newMarkers);
-        $this->redirect('list');
-    }
-    
-    /**
-     * action edit
-     *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Markers $markers
-     * @ignorevalidation $markers
-     * @return void
-     */
-    public function editAction(\Pierraa\SzagOrangemap\Domain\Model\Markers $markers)
-    {
-        $this->view->assign('markers', $markers);
-    }
-    
-    /**
-     * action update
-     *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Markers $markers
-     * @return void
-     */
-    public function updateAction(\Pierraa\SzagOrangemap\Domain\Model\Markers $markers)
-    {
-        $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        $this->markersRepository->update($markers);
-        $this->redirect('list');
-    }
-    
-    /**
-     * action delete
-     *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Markers $markers
-     * @return void
-     */
-    public function deleteAction(\Pierraa\SzagOrangemap\Domain\Model\Markers $markers)
-    {
-        $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        $this->markersRepository->remove($markers);
-        $this->redirect('list');
-    }
+   
 
 }

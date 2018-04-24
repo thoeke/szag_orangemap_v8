@@ -1,11 +1,11 @@
 <?php
-namespace PierraaDesign\SzagOrangemap\Controller;
+namespace PierraaGroup\SzagOrangemap\Controller;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2017 PierraaDesign Werbeagentur GmbH <info@pierraa-design.de>, PierraaDesign Werbeagentur GmbH
+ *  (c) 2017 PierraaGroup Werbeagentur GmbH <info@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
  *
  *  All rights reserved
  *
@@ -35,7 +35,7 @@ class BusinessunitController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     /**
      * businessunitRepository
      *
-     * @var \PierraaDesign\SzagOrangemap\Domain\Repository\BusinessunitRepository
+     * @var \PierraaGroup\SzagOrangemap\Domain\Repository\BusinessunitRepository
      * @inject
      */
     protected $businessunitRepository = NULL;
@@ -54,73 +54,14 @@ class BusinessunitController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     /**
      * action show
      *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Businessunit $businessunit
+     * @param \PierraaGroup\SzagOrangemap\Domain\Model\Businessunit $businessunit
      * @return void
      */
-    public function showAction(\Pierraa\SzagOrangemap\Domain\Model\Businessunit $businessunit)
+    public function showAction(\PierraaGroup\SzagOrangemap\Domain\Model\Businessunit $businessunit)
     {
         $this->view->assign('businessunit', $businessunit);
     }
     
-    /**
-     * action new
-     *
-     * @return void
-     */
-    public function newAction()
-    {
-        
-    }
-    
-    /**
-     * action create
-     *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Businessunit $newBusinessunit
-     * @return void
-     */
-    public function createAction(\Pierraa\SzagOrangemap\Domain\Model\Businessunit $newBusinessunit)
-    {
-        $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        $this->businessunitRepository->add($newBusinessunit);
-        $this->redirect('list');
-    }
-    
-    /**
-     * action edit
-     *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Businessunit $businessunit
-     * @ignorevalidation $businessunit
-     * @return void
-     */
-    public function editAction(\Pierraa\SzagOrangemap\Domain\Model\Businessunit $businessunit)
-    {
-        $this->view->assign('businessunit', $businessunit);
-    }
-    
-    /**
-     * action update
-     *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Businessunit $businessunit
-     * @return void
-     */
-    public function updateAction(\Pierraa\SzagOrangemap\Domain\Model\Businessunit $businessunit)
-    {
-        $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        $this->businessunitRepository->update($businessunit);
-        $this->redirect('list');
-    }
-    
-    /**
-     * action delete
-     *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Businessunit $businessunit
-     * @return void
-     */
-    public function deleteAction(\Pierraa\SzagOrangemap\Domain\Model\Businessunit $businessunit)
-    {
-        $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        $this->businessunitRepository->remove($businessunit);
-        $this->redirect('list');
-    }
+   
 
 }
