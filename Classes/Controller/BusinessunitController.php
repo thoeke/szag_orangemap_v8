@@ -5,7 +5,7 @@ namespace PierraaGroup\SzagOrangemap\Controller;
  *
  *  Copyright notice
  *
- *  (c) 2017 PierraaGroup Werbeagentur GmbH <info@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
+ *  (c) 2018 Thorsten Hoeke, PierraaGroup GmbH
  *
  *  All rights reserved
  *

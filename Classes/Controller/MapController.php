@@ -5,7 +5,7 @@ namespace PierraaGroup\SzagOrangemap\Controller;
  *
  *  Copyright notice
  *
- *  (c) 2017 PierraaGroup GmbH <info@pierraa-design.de>, PierraaGroup GmbH
+ *  (c) 2018 Thorsten Hoeke, PierraaGroup GmbH
  *
  *  All rights reserved
  *
@@ -30,118 +30,109 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     
     /**
-	 * nationsRepository
-	 *
-	 * @var \PierraaGroup\SzagOrangemap\Domain\Repository\NationsRepository
-	 * @inject
-	 */    
+    * nationsRepository
+    *
+    * @var \PierraaGroup\SzagOrangemap\Domain\Repository\NationsRepository
+    * @inject
+    */    
     protected $nationsRepository = NULL;
     
     /**
-	 * citiesRepository
-	 *
-	 * @var \PierraaGroup\SzagOrangemap\Domain\Repository\CitiesRepository
-	 * @inject
-	 */    
+    * citiesRepository
+    *
+    * @var \PierraaGroup\SzagOrangemap\Domain\Repository\CitiesRepository
+    * @inject
+    */    
     protected $citiesRepository = NULL;
     
-     /**
-	 * businessunitRepository
-	 *
-	 * @var \PierraaGroup\SzagOrangemap\Domain\Repository\BusinessunitRepository
-	 * @inject
-	 */    
+    /**
+    * businessunitRepository
+    *
+    * @var \PierraaGroup\SzagOrangemap\Domain\Repository\BusinessunitRepository
+    * @inject
+    */    
     protected $businessunitRepository = NULL;
     
     /**
-	 * companiesRepository
-	 *
-	 * @var \PierraaGroup\SzagOrangemap\Domain\Repository\CompaniesRepository
-	 * @inject
-	 */    
+    * companiesRepository
+    *
+    * @var \PierraaGroup\SzagOrangemap\Domain\Repository\CompaniesRepository
+    * @inject
+    */    
     protected $companiesRepository = NULL;
     
     /**
-	 * markersRepository
-	 *
-	 * @var \PierraaGroup\SzagOrangemap\Domain\Repository\MarkersRepository
-	 * @inject
-	 */    
+    * markersRepository
+    *
+    * @var \PierraaGroup\SzagOrangemap\Domain\Repository\MarkersRepository
+    * @inject
+    */    
     protected $markersRepository = NULL;
     
     
-	/**
-	 * Initializes the current action
-	 *
-	 * @return void
-	 */
-	public function initializeAction()
-	{
+    /**
+     * Initializes the current action
+     *
+     * @return void
+     */
+    public function initializeAction()
+    {
 
-	}
-
-	/**
-	 * Index action for this controller.
-	 *
-	 * @return string The rendered view
-	 */
-	public function listAction()
-	{
-        
-            $sql1 = $this->nationsRepository->findSorted();
-            $this->view->assign('nation',$sql1);
-
-            $sql2 = $this->citiesRepository->findAll();
-            $this->view->assign('city',$sql2);
-
-            $sql3 = $this->businessunitRepository->findAll();
-            $this->view->assign('bunit',$sql3);
-
-            $sql4 = $this->companiesRepository->findAll();
-            $this->view->assign('company',$sql4);
-            
-
-            $filters = $this->request->getArguments();  
-            $this->view->assign('werte',$filters);
-
-            #$sql5 = $this->markersRepository->findMarkers($filters);
-            $sql5 = $this->markersRepository->findByFilter($filters);
-            $this->view->assign('marker', $sql5);
-        
-        
-            if ($GLOBALS['TSFE']->sys_language_uid == 2 ) {
-                $this->view->assign('labelnation', 'Country');
-                $this->view->assign('labelcity', 'City');
-                $this->view->assign('labelbusiness', 'Business unit');
-                $this->view->assign('labelcompany', 'Company');
-                $this->view->assign('phnation', 'Choose a Country');
-                $this->view->assign('phcity', 'Choose a City');
-                $this->view->assign('phbu', 'Choose a business unit');
-                $this->view->assign('phcompany', 'Choose a Company');
-            }
-        
-            else {
-                $this->view->assign('labelnation', 'Land');
-                $this->view->assign('labelcity', 'Stadt');
-                $this->view->assign('labelbusiness', 'Geschäftsbereich');
-                $this->view->assign('labelcompany', 'Unternehmen');
-                $this->view->assign('phnation', 'Wählen Sie ein Land');
-                $this->view->assign('phcity', 'Wählen Sie eine Stadt');
-                $this->view->assign('phbu', 'Wählen Sie einen Geschäftsbereich');
-                $this->view->assign('phcompany', 'Wählen Sie ein Unternehmen');
-            }
-
-	}
+    }
 
     /**
      * Index action for this controller.
      *
      * @return string The rendered view
      */
-    public function showAction()
-	{
+    public function listAction()
+    {
+
+        $sql1 = $this->nationsRepository->findSorted();
+        $this->view->assign('nation',$sql1);
+        
+        $sql2 = $this->citiesRepository->findSorted();
+        $this->view->assign('city',$sql2);
+
+        $sql3 = $this->businessunitRepository->findSorted();
+        $this->view->assign('bunit',$sql3);
+
+        $sql4 = $this->companiesRepository->findSorted();
+        $this->view->assign('company',$sql4);
+
+
+        $filters = $this->request->getArguments();  
+        $this->view->assign('werte',$filters);
+
+        #$sql5 = $this->markersRepository->findMarkers($filters);
+        $sql5 = $this->markersRepository->findByFilter($filters);
+        $this->view->assign('marker', $sql5);
+        
+
+        if ($GLOBALS['TSFE']->sys_language_uid == 2 ) {
+            $this->view->assign('labelnation', 'Country');
+            $this->view->assign('labelcity', 'City');
+            $this->view->assign('labelbusiness', 'Business unit');
+            $this->view->assign('labelcompany', 'Company');
+            $this->view->assign('phnation', 'Choose a Country');
+            $this->view->assign('phcity', 'Choose a City');
+            $this->view->assign('phbu', 'Choose a business unit');
+            $this->view->assign('phcompany', 'Choose a Company');
+        }
+
+        else {
+            $this->view->assign('labelnation', 'Land');
+            $this->view->assign('labelcity', 'Stadt');
+            $this->view->assign('labelbusiness', 'Geschäftsbereich');
+            $this->view->assign('labelcompany', 'Unternehmen');
+            $this->view->assign('phnation', 'Wählen Sie ein Land');
+            $this->view->assign('phcity', 'Wählen Sie eine Stadt');
+            $this->view->assign('phbu', 'Wählen Sie einen Geschäftsbereich');
+            $this->view->assign('phcompany', 'Wählen Sie ein Unternehmen');
+        }
 
     }
+
 }
 
 ?>

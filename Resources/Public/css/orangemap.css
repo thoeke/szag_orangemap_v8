@@ -352,7 +352,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
     line-height: 1.05rem;
 }
 .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
-    background: #fff url("../../images/icons/sz-inline-icons/sz-inline-icons__close.svg") no-repeat scroll center center / 10px auto;
+    background: #fff url("../../Public/img/sz-inline-icons__close.svg") no-repeat scroll center center / 10px auto;
     border: 3px solid #ef7d00;
     box-sizing: border-box;
     height: 100%;

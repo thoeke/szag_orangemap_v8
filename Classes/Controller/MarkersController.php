@@ -5,7 +5,7 @@ namespace PierraaGroup\SzagOrangemap\Controller;
  *
  *  Copyright notice
  *
- *  (c) 2017 PierraaGroup Werbeagentur GmbH <info@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
+ *  (c) 2018 Thorsten Hoeke, PierraaGroup GmbH
  *
  *  All rights reserved
  *
@@ -84,36 +84,36 @@ class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         
         foreach($content as $key => $marker) {
             
-            $current = $this->citiesRepository->findByUid($marker['city']);
-            if ($current != NULL) {
-                $content[$key]['citytitle'] = $current->getTitle();
-            }
-            
-            $current = $this->nationsRepository->findByUid($marker['nation']);
-            if ($current != NULL) {
-                $content[$key]['nationtitle'] = $current->getTitle();
-            }
+            $items[$key]['title'] = $marker->getTitle();
+            $items[$key]['adress'] = $marker->getAdress();
+            $items[$key]['zipcode'] = $marker->getzipcode();
+            $items[$key]['website'] = $marker->getWebsite();
+            $items[$key]['longitude'] = $marker->getLongitude();
+            $items[$key]['latitude'] = $marker->getLatitude();
+                                
+            $current = $marker->getCity();
+            $items[$key]['citytitle'] = $current->getTitle();
+       
+            $current = $marker->getNation();
+         //   \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($current);
+         //   $items[$key]['nationtitle'] = $current->getTitle();
+         
+            $current = $marker->getBusinessunit();
+            $items[$key]['businessunittitle'] = $current->getTitle();
+        
+            $current = $marker->getCompany();
+            $items[$key]['companytitle'] = $current->getTitle();
 
-            $current = $this->businessunitRepository->findByUid($marker['businessunit']);
-            if ($current != NULL) {
-                $content[$key]['businessunittitle'] = $current->getTitle();
-            }
-            
-            $current = $this->companiesRepository->findByUid($marker['company']);
-            if ($current != NULL) {
-                $content[$key]['companytitle'] = $current->getTitle();
-            }
         }
            
         return json_encode(
             array(
                 'success' => true,
                 'arguments' => $filters,
-                'content' => $content
+                'content' => $items
             )
         );  
     }
-    
     
     /**
      * action show
@@ -126,6 +126,4 @@ class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $this->view->assign('markers', $markers);
     }
     
-   
-
 }

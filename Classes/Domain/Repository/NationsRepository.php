@@ -5,7 +5,7 @@ namespace PierraaGroup\SzagOrangemap\Domain\Repository;
  *
  *  Copyright notice
  *
- *  (c) 2016 Markus Klinger <klinger@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
+ *  (c) 2018 Thorsten Hoeke, PierraaGroup GmbH
  *
  *  All rights reserved
  *
@@ -27,14 +27,17 @@ namespace PierraaGroup\SzagOrangemap\Domain\Repository;
  ***************************************************************/
 
 /**
- * The repository for OccupationalFields
+ * The repository for NationsRepository
  */
 class NationsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
     public function findSorted() {
         $query = $this->createQuery();
         $query->setOrderings(array("title" => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
-        $query = $query->execute();
+    //    $queryParser = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\Storage\Typo3DbQueryParser::class);
+    //    \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($queryParser->convertQueryToDoctrineQueryBuilder($query)->getSQL());
+    //    \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($queryParser->convertQueryToDoctrineQueryBuilder($query)->getParameters());
+        return $query->execute();
     }
-
+    
 }

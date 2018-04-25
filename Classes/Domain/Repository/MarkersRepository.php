@@ -5,7 +5,7 @@ namespace PierraaGroup\SzagOrangemap\Domain\Repository;
  *
  *  Copyright notice
  *
- *  (c) 2017 Thorsten Hoeke <info@pierraa-design.de>, PierraaGroup Werbeagentur GmbH
+ *  (c) 2018 Thorsten Hoeke, PierraaGroup GmbH
  *
  *  All rights reserved
  *
@@ -29,13 +29,6 @@ namespace PierraaGroup\SzagOrangemap\Domain\Repository;
 /**
  * The repository for Markers
  */
-
-
-
-
-
-
-
 class MarkersRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
     public function findMarkers($filters){
@@ -89,11 +82,10 @@ class MarkersRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         if (!empty($constraints)) {
             $query->matching(
                 $query->logicalAnd($constraints)
-             
             );
         }
-                
-        return $query->execute(true);
+             
+        return $query->execute();
         
     }
     
