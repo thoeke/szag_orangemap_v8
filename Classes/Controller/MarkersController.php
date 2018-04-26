@@ -31,7 +31,6 @@ namespace PierraaGroup\SzagOrangemap\Controller;
  */
 class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
      /**
      * nationsRepository
      *
@@ -115,15 +114,5 @@ class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         );  
     }
     
-    /**
-     * action show
-     *
-     * @param \Pierraa\SzagOrangemap\Domain\Model\Markers $markers
-     * @return void
-     */
-    public function showAction(\Pierraa\SzagOrangemap\Domain\Model\Markers $markers)
-    {
-        $this->view->assign('markers', $markers);
-    }
     
 }

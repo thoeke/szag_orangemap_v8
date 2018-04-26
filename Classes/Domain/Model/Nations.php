@@ -32,7 +32,7 @@ namespace PierraaGroup\SzagOrangemap\Domain\Model;
 class Nations extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
-     /**
+    /**
      * title
      *
      * @var string

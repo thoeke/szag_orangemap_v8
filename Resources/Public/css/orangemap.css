@@ -9,9 +9,6 @@ footer .container .row { margin-top: 60px; padding-top: 20px; border-top: 1px do
 body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 
-
-/*# sourceMappingURL=styles.css.map */
-
 .ext_orangemap {
   max-width: 930px;
 }
@@ -273,7 +270,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
     background: #fff;
-    border: 3px solid #ef7d00;
+ //   border: 3px solid #ef7d00;
     background-image: url('../img/sz-inline-icons__close.svg');
     background-size: 10px;
     background-position: center;
@@ -353,7 +350,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 }
 .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
     background: #fff url("../../Public/img/sz-inline-icons__close.svg") no-repeat scroll center center / 10px auto;
-    border: 3px solid #ef7d00;
+ //   border: 3px solid #ef7d00;
     box-sizing: border-box;
     height: 100%;
     right: 0;

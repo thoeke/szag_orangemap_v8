@@ -1,4 +1,15 @@
 
+/***************************************************************
+ *
+ *  Copyright notice
+ *
+ *  (c) 2018 Thorsten Hoeke, PierraaGroup GmbH
+ *
+ *  All rights reserved
+ *
+ ***************************************************************/
+
+
 // initialize the map on the "map" div with a given center and zoom
 var orangemap = L.map('orangemap', {
     center: [30.575330,7.102411],
@@ -20,7 +31,7 @@ var markers = L.markerClusterGroup({
 });
 
 var szagmarker = L.icon({
-    iconUrl: 'typo3conf/ext/szag_orangemap/Resources/Public/img/marker-icon.png',
+    iconUrl: 'marker-icon.png',
     iconSize: [20, 32],
     iconAnchor: [10, 32],
     popupAnchor: [0, -35],
@@ -35,7 +46,6 @@ $( document ).ready(function() {
 
 function updateOM() {
     updateMarkers();
-  //  updateFilters();
 }
 
 function updateMarkers() {
@@ -57,7 +67,9 @@ function updateMarkers() {
       }
     };
 
-    ajaxlink = $('#sz-map_ajaxlink').text();
+ //   ajaxlink = $('#sz-map_ajaxlink').text();
+    ajaxlink = 'http://typo3-bsdist.p388122.mittwaldserver.info/home/json';
+    
     var arrnations = new Array; 
     var arrcities = new Array; 
     var arrbusinessunits = new Array; 
@@ -72,6 +84,9 @@ function updateMarkers() {
         success:    function(html){
                     markers.clearLayers();
                     $.each(html.content, function(index, value) {
+                        
+                        console.log(index);
+                        
                         marker = new L.Marker([value.latitude, value.longitude]);
                         popup = '<b>' + value.title + '</b><br />' + value.adress + '<br />' + value.zipcode + ' ' + value.citytitle + '<br /><a href="http://' + value.website + '" target="_blank">' + value.website;
                         marker.bindPopup(popup);
