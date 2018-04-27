@@ -7,7 +7,7 @@ page.includeCSS {
 }
 
 page.includeJSFooterlibs {
-        js1 = EXT:szag_orangemap/Resources/Public/js/leaflet-1.0.3.js
+        js1 = EXT:szag_orangemap/Resources/Public/leaflet/leaflet.js
         js2 = EXT:szag_orangemap/Resources/Public/leaflet/zoomslider/L.Control.Zoomslider.js
         js3 = EXT:szag_orangemap/Resources/Public/js/leaflet.markercluster.js
         js4 = EXT:szag_orangemap/Resources/Public/js/orangemap.js

@@ -10,7 +10,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 
 .ext_orangemap {
-  max-width: 930px;
+  max-width: 100%;
 }
 
 .ext_orangemap #orangemap {
