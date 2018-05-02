@@ -92,21 +92,25 @@ class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
                                 
             $current = $marker->getCity();
             if ($current) { 
+                $items[$key]['cityid'] = $current->getUid();
                 $items[$key]['citytitle'] = $current->getTitle();
             }
             
             $current = $marker->getNation();
             if ($current) { 
+                $items[$key]['nationid'] = $current->getUid();
                 $items[$key]['nationtitle'] = $current->getTitle();
             }
          
             $current = $marker->getBusinessunit();
             if ($current) { 
+                $items[$key]['businessunitid'] = $current->getUid();
                 $items[$key]['businessunittitle'] = $current->getTitle();
             }
         
             $current = $marker->getCompany();
             if ($current) { 
+                $items[$key]['companyid'] = $current->getUid();
                 $items[$key]['companytitle'] = $current->getTitle();
             }
 

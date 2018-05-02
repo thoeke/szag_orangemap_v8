@@ -86,17 +86,15 @@ function updateMarkers() {
                     markers.clearLayers();
                     $.each(html.content, function(index, value) {
                         
-                   //     console.log(index);
-                        
                         marker = new L.Marker([value.latitude, value.longitude]);
                         popup = '<b>' + value.title + '</b><br />' + value.adress + '<br />' + value.zipcode + ' ' + value.citytitle + '<br /><a href="http://' + value.website + '" target="_blank">' + value.website;
                         marker.bindPopup(popup);
                         markers.addLayer(marker);
                         
-                        arrnations.push(value.nationtitle + '__' + value.nation);   
-                        arrcities.push(value.citytitle + '__' + value.city);   
-                        arrbusinessunits.push(value.businessunittitle + '__' + value.businessunit);   
-                        arrcompanies.push(value.companytitle + '__' + value.company);   
+                        arrnations.push(value.nationtitle + '__' + value.nationid);   
+                        arrcities.push(value.citytitle + '__' + value.cityid);   
+                        arrbusinessunits.push(value.businessunittitle + '__' + value.businessunitid);   
+                        arrcompanies.push(value.companytitle + '__' + value.companyid);   
                         
                     });
                     
@@ -133,7 +131,8 @@ function onlyUnique(value, index, self) {
 }
 
 function optionOutput(arr, post) {
-    
+     console.log(arr);
+
     arr = arr.filter(onlyUnique); // Duplikate entfernen
     arr.sort();                   // Array sortieren
     var output = '';
@@ -162,9 +161,13 @@ function optionOutput(arr, post) {
 
 function filter_multiselect(filter) {
 
+
+
     var object = {};
-    var arr = $('#' + filter).val();
-    console.log(arr);
+    var field = $('#' + filter);
+    var arr = field.val();
+      
+    
     if (arr && arr.length) {
 
         for (var i = 0; i < arr.length; ++i) {
