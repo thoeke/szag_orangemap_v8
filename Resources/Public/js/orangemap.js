@@ -67,8 +67,9 @@ function updateMarkers() {
       }
     };
 
- //   ajaxlink = $('#sz-map_ajaxlink').text();
-    ajaxlink = 'http://typo3-bsdist.p388122.mittwaldserver.info/home/json';
+   ajaxlink = $('#sz-map_ajaxlink').text();
+  // alert(ajaxlink);
+   ajaxlink = '/home/json';
     
     var arrnations = new Array; 
     var arrcities = new Array; 
@@ -85,7 +86,7 @@ function updateMarkers() {
                     markers.clearLayers();
                     $.each(html.content, function(index, value) {
                         
-                        console.log(index);
+                   //     console.log(index);
                         
                         marker = new L.Marker([value.latitude, value.longitude]);
                         popup = '<b>' + value.title + '</b><br />' + value.adress + '<br />' + value.zipcode + ' ' + value.citytitle + '<br /><a href="http://' + value.website + '" target="_blank">' + value.website;
@@ -120,15 +121,11 @@ function updateMarkers() {
                     var scompanies = $('#scompanies').val();
                     $('#scompanies').empty();
                     $('#scompanies').append( optionOutput(arrcompanies, scompanies) );
-                    $("#scompanies").trigger("chosen:updated");
-
-                    
-                    
+                    $("#scompanies").trigger("chosen:updated");    
                     
         }
     });
 }
-
 
 
 function onlyUnique(value, index, self) { 
@@ -146,9 +143,9 @@ function optionOutput(arr, post) {
         
         var val = arr[i].split('__');
         if (post != null) {
-            console.log(post);
+       //     console.log(post);
             var select = post.indexOf(val[1]);
-            console.log(select);
+        //    console.log(select);
         } 
         
         if (select != '-1') {
@@ -167,11 +164,12 @@ function filter_multiselect(filter) {
 
     var object = {};
     var arr = $('#' + filter).val();
-    
+    console.log(arr);
     if (arr && arr.length) {
 
         for (var i = 0; i < arr.length; ++i) {
           object[i] = arr[i];
+          
         }
 
         return object;

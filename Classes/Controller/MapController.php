@@ -90,11 +90,10 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $sql4 = $this->companiesRepository->findSorted();
         $this->view->assign('company',$sql4);
 
-
-        $filters = $this->request->getArguments();  
+       // $filters = $this->request->getArguments();  
         $this->view->assign('werte',$filters);
+        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($filters);
 
-        #$sql5 = $this->markersRepository->findMarkers($filters);
         $sql5 = $this->markersRepository->findByFilter($filters);
         $this->view->assign('marker', $sql5);
         

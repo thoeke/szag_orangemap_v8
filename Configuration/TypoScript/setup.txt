@@ -86,7 +86,12 @@ tx_szagorangemap_list {
     disableAllHeaderCode = 1
     xhtml_cleaning = 0
     admPanel = 0
-    #additionalHeaders = Content-type: text/plain
+    additionalHeaders {
+      10 {
+        header = Content-Type: application/json
+        replace = 1
+      }
+    }
     no_cache = 1
     locale_all = de_DE.utf8
   }
