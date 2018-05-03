@@ -66,64 +66,59 @@ function updateMarkers() {
         scompanies: companies
       }
     };
-
-   ajaxlink = $('#sz-map_ajaxlink').text();
-  // alert(ajaxlink);
-   ajaxlink = '/home/json';
+    
+    ajaxlink = $('#sz-map_ajaxlink').text();
     
     var arrnations = new Array; 
     var arrcities = new Array; 
     var arrbusinessunits = new Array; 
     var arrcompanies = new Array; 
-     
-    $.ajax({
-        type:       "POST",
-        url:        ajaxlink,
-        data:       requestParameter,
-        dataType:    "json",
+      
+    $.getJSON(ajaxlink, function(html){
+        
+        console.log(html.content);
+        markers.clearLayers();
+        
+        $.each(html.content, function(index, value) {
+                        
+            marker = new L.Marker([value.latitude, value.longitude]);
+            popup = '<b>' + value.title + '</b><br />' + value.adress + '<br />' + value.zipcode + ' ' + value.citytitle + '<br /><a href="http://' + value.website + '" target="_blank">' + value.website;
+            marker.bindPopup(popup);
+            markers.addLayer(marker);
 
-        success:    function(html){
-                    markers.clearLayers();
-                    $.each(html.content, function(index, value) {
-                        
-                        marker = new L.Marker([value.latitude, value.longitude]);
-                        popup = '<b>' + value.title + '</b><br />' + value.adress + '<br />' + value.zipcode + ' ' + value.citytitle + '<br /><a href="http://' + value.website + '" target="_blank">' + value.website;
-                        marker.bindPopup(popup);
-                        markers.addLayer(marker);
-                        
-                        arrnations.push(value.nationtitle + '__' + value.nationid);   
-                        arrcities.push(value.citytitle + '__' + value.cityid);   
-                        arrbusinessunits.push(value.businessunittitle + '__' + value.businessunitid);   
-                        arrcompanies.push(value.companytitle + '__' + value.companyid);   
-                        
-                    });
+            arrnations.push(value.nationtitle + '__' + value.nationid);   
+            arrcities.push(value.citytitle + '__' + value.cityid);   
+            arrbusinessunits.push(value.businessunittitle + '__' + value.businessunitid);   
+            arrcompanies.push(value.companytitle + '__' + value.companyid);   
+        
+        });
+          
+        orangemap.addLayer(markers);
+        orangemap.fitBounds(markers.getBounds());
+
+        var snations = $('#snations').val();
+        $('#snations').empty();
+        $('#snations').append( optionOutput(arrnations, snations) );
+        $("#snations").trigger("chosen:updated");
+
+        var scities = $('#scities').val();
+        $('#scities').empty();
+        $('#scities').append( optionOutput(arrcities, scities) );
+        $("#scities").trigger("chosen:updated");
+
+        var sbusinessunits = $('#sbusinessunits').val();
+        $('#sbusinessunits').empty();
+        $('#sbusinessunits').append( optionOutput(arrbusinessunits, sbusinessunits) );
+        $("#sbusinessunits").trigger("chosen:updated");
+
+        var scompanies = $('#scompanies').val();
+        $('#scompanies').empty();
+        $('#scompanies').append( optionOutput(arrcompanies, scompanies) );
+        $("#scompanies").trigger("chosen:updated");    
                     
-                    orangemap.addLayer(markers);
-                    orangemap.fitBounds(markers.getBounds());
-                    
-                    var snations = $('#snations').val();
-                    $('#snations').empty();
-                    $('#snations').append( optionOutput(arrnations, snations) );
-                    $("#snations").trigger("chosen:updated");
-                    
-                    var scities = $('#scities').val();
-                    $('#scities').empty();
-                    $('#scities').append( optionOutput(arrcities, scities) );
-                    $("#scities").trigger("chosen:updated");
-                    
-                    var sbusinessunits = $('#sbusinessunits').val();
-                    $('#sbusinessunits').empty();
-                    $('#sbusinessunits').append( optionOutput(arrbusinessunits, sbusinessunits) );
-                    $("#sbusinessunits").trigger("chosen:updated");
-                    
-                    var scompanies = $('#scompanies').val();
-                    $('#scompanies').empty();
-                    $('#scompanies').append( optionOutput(arrcompanies, scompanies) );
-                    $("#scompanies").trigger("chosen:updated");    
-                    
-        }
     });
-}
+        
+}       
 
 
 function onlyUnique(value, index, self) { 
@@ -131,7 +126,6 @@ function onlyUnique(value, index, self) {
 }
 
 function optionOutput(arr, post) {
-     console.log(arr);
 
     arr = arr.filter(onlyUnique); // Duplikate entfernen
     arr.sort();                   // Array sortieren
@@ -161,18 +155,14 @@ function optionOutput(arr, post) {
 
 function filter_multiselect(filter) {
 
-
-
     var object = {};
     var field = $('#' + filter);
     var arr = field.val();
       
-    
     if (arr && arr.length) {
 
         for (var i = 0; i < arr.length; ++i) {
           object[i] = arr[i];
-          
         }
 
         return object;
