@@ -92,7 +92,6 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
         $filters = $this->request->getArguments();  
         $this->view->assign('werte',$filters);
-        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($filters);
 
         $sql5 = $this->markersRepository->findByFilter($filters);
         $this->view->assign('marker', $sql5);

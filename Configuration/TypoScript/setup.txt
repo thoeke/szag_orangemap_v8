@@ -34,12 +34,14 @@ plugin.tx_szagorangemap_szagorangemap {
 		partialRootPaths.0 = {$plugin.tx_szagorangemap_szagorangemap.view.partialRootPath}
 		layoutRootPaths.0 = {$plugin.tx_szagorangemap_szagorangemap.view.layoutRootPath}
 	}
-	persistence {
-		
-	}
         settings {
-            ajaxPageType = 800
-         }
+                ajaxPageType = 800
+                setup.marketing.information = 1
+        }
+
+        features{
+                requireCHashArgumentForActionArguments = 0
+        }
 }
 
 plugin.tx_szagorangemap._CSS_DEFAULT_STYLE (

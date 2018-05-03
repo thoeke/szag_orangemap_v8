@@ -113,8 +113,9 @@ class MarkersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
                 $items[$key]['companyid'] = $current->getUid();
                 $items[$key]['companytitle'] = $current->getTitle();
             }
-
+            
         }
+       
            
         return json_encode(
             array(

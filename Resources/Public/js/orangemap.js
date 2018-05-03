@@ -67,6 +67,7 @@ function updateMarkers() {
       }
     };
     
+    // console.log(nations);
     ajaxlink = $('#sz-map_ajaxlink').text();
     
     var arrnations = new Array; 
@@ -74,7 +75,7 @@ function updateMarkers() {
     var arrbusinessunits = new Array; 
     var arrcompanies = new Array; 
       
-    $.getJSON(ajaxlink, function(html){
+    $.getJSON(ajaxlink, requestParameter, function(html){
         
         console.log(html.content);
         markers.clearLayers();
@@ -117,9 +118,8 @@ function updateMarkers() {
         $("#scompanies").trigger("chosen:updated");    
                     
     });
-        
+   
 }       
-
 
 function onlyUnique(value, index, self) { 
     return self.indexOf(value) === index;
@@ -156,9 +156,8 @@ function optionOutput(arr, post) {
 function filter_multiselect(filter) {
 
     var object = {};
-    var field = $('#' + filter);
-    var arr = field.val();
-      
+    var arr = $('#' + filter).val();
+    
     if (arr && arr.length) {
 
         for (var i = 0; i < arr.length; ++i) {
